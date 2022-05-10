@@ -4,6 +4,9 @@
   "private": true,
   "dependencies": {
     "@craco/craco": "^6.4.3",
+    "@dnd-kit/core": "^5.0.3",
+    "@dnd-kit/modifiers": "^5.0.0",
+    "@dnd-kit/sortable": "^6.0.1",
     "@floating-ui/dom": "^0.4.1",
     "@floating-ui/react-dom": "^0.6.0",
     "@testing-library/jest-dom": "^5.16.1",
@@ -15,6 +18,7 @@
     "craco-less": "^2.0.0",
     "mobx": "^6.5.0",
     "mobx-react-lite": "^3.3.0",
+    "nanoid": "^3.3.4",
     "qrcode.react": "^1.0.1",
     "react": "^17.0.1",
     "react-activation": "^0.9.7",

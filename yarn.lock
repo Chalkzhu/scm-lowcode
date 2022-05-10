@@ -1128,6 +1128,45 @@
   resolved "https://registry.npmjs.org/@ctrl/tinycolor/-/tinycolor-3.4.0.tgz#c3c5ae543c897caa9c2a68630bed355be5f9990f"
   integrity sha512-JZButFdZ1+/xAfpguQHoabIXkcqRRKpMrWKBkpEZZyxfY9C1DpADFB8PEqGSTeFr135SaTRfKqGKx5xSCLI7ZQ==
 
+"@dnd-kit/accessibility@^3.0.0":
+  version "3.0.0"
+  resolved "https://registry.npmjs.org/@dnd-kit/accessibility/-/accessibility-3.0.0.tgz#b56e3750414fd907b7d6972b3116aa8f96d07fde"
+  integrity sha512-QwaQ1IJHQHMMuAGOOYHQSx7h7vMZPfO97aDts8t5N/MY7n2QTDSnW+kF7uRQ1tVBkr6vJ+BqHWG5dlgGvwVjow==
+  dependencies:
+    tslib "^2.0.0"
+
+"@dnd-kit/core@^5.0.3":
+  version "5.0.3"
+  resolved "https://registry.npmjs.org/@dnd-kit/core/-/core-5.0.3.tgz#028d7e543e9fd3756f9cb857b34f818d73020810"
+  integrity sha512-IribcBLsaPqHdYLpc5xG0TqwYIaD+65offdEYxoKh38WDjzRxUjDmrt7hj9oa/ooUKL0epux20u+mBTd92i/zw==
+  dependencies:
+    "@dnd-kit/accessibility" "^3.0.0"
+    "@dnd-kit/utilities" "^3.1.0"
+    tslib "^2.0.0"
+
+"@dnd-kit/modifiers@^5.0.0":
+  version "5.0.0"
+  resolved "https://registry.npmjs.org/@dnd-kit/modifiers/-/modifiers-5.0.0.tgz#c2ba0bfdb6bed994affcfc4c86834795b7a7f029"
+  integrity sha512-ZVOfa5dKmvAPBxjjnI4QTm8fHV4/gMdS6k0zY5Z8p/p9HkL/3QEHn2fYgqM2zVDpxf5maqrZ4MvqXILSPNQPMQ==
+  dependencies:
+    "@dnd-kit/utilities" "^3.1.0"
+    tslib "^2.0.0"
+
+"@dnd-kit/sortable@^6.0.1":
+  version "6.0.1"
+  resolved "https://registry.npmjs.org/@dnd-kit/sortable/-/sortable-6.0.1.tgz#08d046efa85c546fd21979836b007d6fea1001f9"
+  integrity sha512-FGpRHBcflpwWpSP8bMJ4zNcDywDXssZDJBwGYuHd1RqUU/+JX43pEU0u0OHw06LabEZMOLBbyWoIaZJ0abCOEA==
+  dependencies:
+    "@dnd-kit/utilities" "^3.1.0"
+    tslib "^2.0.0"
+
+"@dnd-kit/utilities@^3.1.0":
+  version "3.1.0"
+  resolved "https://registry.npmjs.org/@dnd-kit/utilities/-/utilities-3.1.0.tgz#330ef24303da05f85ff20bb8f74b385c96caee58"
+  integrity sha512-2JBdIgjJ7xjMRpKagdMuYKWJdDoVVw9Wc6lfMrLjrq8t4QlMEjtsab5JVUlzWvHgANn7w3Y3VhalFfbp4dQrKg==
+  dependencies:
+    tslib "^2.0.0"
+
 "@eslint/eslintrc@^1.0.5":
   version "1.0.5"
   resolved "https://registry.npmjs.org/@eslint/eslintrc/-/eslintrc-1.0.5.tgz#33f1b838dbf1f923bfa517e008362b78ddbbf318"
@@ -6219,6 +6258,11 @@ nanoid@^3.1.30:
   resolved "https://registry.npmjs.org/nanoid/-/nanoid-3.1.30.tgz#63f93cc548d2a113dc5dfbc63bfa09e2b9b64362"
   integrity sha512-zJpuPDwOv8D2zq2WRoMe1HsfZthVewpel9CAvTfc/2mBD1uUT/agc5f7GHGWXlYkFvi1mVxe4IjvP2HNrop7nQ==
 
+nanoid@^3.3.4:
+  version "3.3.4"
+  resolved "https://registry.npmjs.org/nanoid/-/nanoid-3.3.4.tgz#730b67e3cd09e2deacf03c027c81c9d9dbc5e8ab"
+  integrity sha512-MqBkQh/OHTS2egovRtLk45wEyNXwF+cokD+1YPf9u5VfJiRdAiRwB2froX5Co9Rh20xs4siNPm8naNotSD6RBw==
+
 native-request@^1.0.5:
   version "1.1.0"
   resolved "https://registry.npmjs.org/native-request/-/native-request-1.1.0.tgz#acdb30fe2eefa3e1bc8c54b3a6852e9c5c0d3cb0"
@@ -8905,6 +8949,11 @@ tslib@^1.10.0, tslib@^1.8.1:
   version "1.14.1"
   resolved "https://registry.npmjs.org/tslib/-/tslib-1.14.1.tgz#cf2d38bdc34a134bcaf1091c41f6619e2f672d00"
   integrity sha512-Xni35NKzjgMrwevysHTCArtLDpPvye8zV/0E4EyYn43P7/7qvQwPh9BGkHewbMulVntbigmcT7rdX3BNo9wRJg==
+
+tslib@^2.0.0:
+  version "2.4.0"
+  resolved "https://registry.npmjs.org/tslib/-/tslib-2.4.0.tgz#7cecaa7f073ce680a05847aa77be941098f36dc3"
+  integrity sha512-d6xOpEDfsi2CZVlPQzGeux8XMwLT9hssAsaPYExaQMuYskwb+x1x7J371tWlbBdWHroy99KnVB6qIkUbs5X3UQ==
 
 tslib@^2.0.3, tslib@^2.3.0:
   version "2.3.1"

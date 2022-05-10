@@ -100,7 +100,9 @@ $ npm run generate
 
 > 表单设计器
 
-整个表单视图: 左中右分块视图
+**整个表单视图: 左中右分块视图**
+
+
 
 
 
@@ -118,3 +120,8 @@ $ npm run generate
 
 
 
+
+
+## 插件
+
+> 拖拽中的王者: [DndKit](https://docs.dndkit.com/presets/sortable)
