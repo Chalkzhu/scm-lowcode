@@ -13,6 +13,7 @@ import SortableItem from './sortableItem';
 import useStore from '@/store';
 
 const SortableBox = () => {
+  const [items, setItems] = React.useState(['1', '2', '3']);
   const globalStore = useStore();
 
   const sensors = useSensors(
@@ -27,13 +28,30 @@ const SortableBox = () => {
     console.log('SortHandleDragEnd', event);
 
     if (active.id !== over.id) {
-      const oldItems = globalStore.groupKeys;
+      const oldItems = [...globalStore.previewFields.children];
 
-      const oldIndex = oldItems.indexOf(active.id);
-      const newIndex = oldItems.indexOf(over.id);
-      globalStore.moveGroupArray(arrayMove(oldItems, oldIndex, newIndex));
+      const oldIndex = oldItems.findIndex(v => v.name === active.id);
+      const newIndex = oldItems.findIndex(v => v.name === over.id);
+      globalStore.updateGroupArray(arrayMove(oldItems, oldIndex, newIndex));
     }
+    // if (active.id !== over.id) {
+    //   setItems((items) => {
+    //     const oldIndex = items.indexOf(active.id);
+    //     const newIndex = items.indexOf(over.id);
+
+    //     return arrayMove(items, oldIndex, newIndex);
+    //   });
+    // }
   }
+
+  const Control = (arr) => {
+    return arr?.map(v => {
+      if (v.type === 'object' && v.children) {
+        return Control(v.children);
+      }
+      return <SortableItem key={v.name} id={v.name} />;
+    })
+  };
 
   return (
     <>
@@ -42,13 +60,13 @@ const SortableBox = () => {
         collisionDetection={closestCenter}
         onDragEnd={handleDragEnd}
       > */}
-        {/* 可排序拖拽 */}
-        <SortableContext
-          items={globalStore.groupKeys}
-          strategy={verticalListSortingStrategy}
-        >
-          {globalStore.groupKeys.map(v => <SortableItem key={v} id={v} />)}
-        </SortableContext>
+      {/* 可排序拖拽 */}
+      <SortableContext
+        items={globalStore.previewFields.children}
+        strategy={verticalListSortingStrategy}
+      >
+        {Control(globalStore.previewFields.children)}
+      </SortableContext>
       {/* </DndContext> */}
     </>
   )

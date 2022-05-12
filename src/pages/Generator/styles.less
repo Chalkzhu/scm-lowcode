@@ -25,29 +25,29 @@
         flex-flow: wrap;
         gap: 16px;
         margin: 8px 0 24px;
+
+        .group_item_wrap {
+          width: calc(50% - 8px);
+        }
       }
     }
 
-    .group_item_wrap {
-      width: calc(50% - 8px);
+    .group_item {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 104px;
+      height: 32px;
+      border-radius: 2px;
+      border: 1px dashed transparent;
+      box-shadow: 0 0 2px var(--color-2);
+      color: var(--color-65);
+      background: var(--color-contrast);
+      transition: .3s;
+      cursor: pointer;
 
-      .group_item {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        width: 104px;
-        height: 32px;
-        border-radius: 2px;
-        border: 1px dashed transparent;
-        box-shadow: 0 0 2px var(--color-2);
-        color: var(--color-65);
-        background: var(--color-contrast);
-        transition: .3s;
-        cursor: pointer;
-
-        &:hover {
-          border-color: var(--primary-color);
-        }
+      &:hover {
+        border-color: var(--primary-color);
       }
     }
   }
@@ -90,6 +90,26 @@
       .sortable_item {
         margin-bottom: 16px;
       }
+    }
+  }
+
+  // 拖拽的样式
+  .drag_overlay {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 104px;
+    height: 32px;
+    border-radius: 2px;
+    border: 1px dashed transparent;
+    box-shadow: 0 0 2px var(--color-2);
+    color: var(--color-65);
+    background: var(--color-contrast);
+    transition: .3s;
+    cursor: pointer;
+
+    &:hover {
+      border-color: var(--primary-color);
     }
   }
 }

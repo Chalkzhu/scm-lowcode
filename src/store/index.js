@@ -1,5 +1,6 @@
 import { createContext, useContext } from "react";
 import { makeAutoObservable } from "mobx";
+import { transformer } from '@/utils';
 
 class GlobalStore {
   count = 0;
@@ -18,7 +19,7 @@ class GlobalStore {
     }
   ];
 
-  // 默认展示的数据
+  // 默认接收的数据
   defaultValue = {
     displayType: 'row',
     labelWidth: 130,
@@ -39,7 +40,29 @@ class GlobalStore {
     }
   };
 
-  groupKeys = [];
+  // 使用时的数据结构
+  previewFields = {
+    displayType: 'row',
+    labelWidth: 130,
+    type: 'object',
+    children: [
+      {
+        name: 'url',
+        itle: 'url输入框',
+        placeholder: '//www.taobao.com',
+        type: 'string',
+        format: 'url',
+        required: true,
+      },
+      {
+        name: 'email',
+        title: 'email输入框',
+        type: 'string',
+        format: 'email',
+      },
+    ]
+  };
+
   activeData = {}; // 当前选中的拖拽元素id
 
   constructor() {
@@ -53,21 +76,17 @@ class GlobalStore {
   // 初始化
   initInstance(defaultValue) {
     this.defaultValue = defaultValue;
-    this.groupKeys = Object.keys(defaultValue.properties)
-  }
-
-  moveGroupArray(data) { // 更换位置
-    this.groupKeys = data;
+    this.previewFields = transformer(defaultValue);
   }
 
   updateGroupArray(data) { // 更新
-    this.groupKeys = data;
+    this.previewFields = {...this.previewFields, children: data };
   }
 
   changeActiveData(data) {
     this.activeData = data;
   }
-  
+
 };
 
 const Context = createContext(new GlobalStore());

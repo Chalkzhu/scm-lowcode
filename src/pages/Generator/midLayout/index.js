@@ -1,5 +1,6 @@
 import React from 'react';
 import SortableBox from './sortableBox';
+import Dnd from '../dnd';
 
 const MidLayout = () => {
 
@@ -16,6 +17,8 @@ const MidLayout = () => {
         {/* 可拖拽区域 */}
         <div className="mid_layout_dnd">
           <SortableBox />
+
+          <Dnd />
         </div>
       </div>
     </>

@@ -1,10 +1,17 @@
 import React from 'react';
+import { toJS } from 'mobx';
+import useStore from '@/store';
 import { Button } from 'antd';
 
 const Header = () => {
 
   // eslint-disable-next-line no-unused-vars
   const handleToggle = (second) => {};
+  const globalStore = useStore();
+
+  const handleSave = () => {
+    console.log('globalStore:', toJS(globalStore));
+  };
 
   return (
     <header>
@@ -16,7 +23,7 @@ const Header = () => {
       <div className="header_operate">
         <Button>清空</Button>
         <Button>预览</Button>
-        <Button type="primary">保存</Button>
+        <Button type="primary" onClick={handleSave}>保存</Button>
       </div>
     </header>
   )

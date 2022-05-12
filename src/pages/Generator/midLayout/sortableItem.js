@@ -14,7 +14,7 @@ const SortableItem = ({ id }) => {
     setNodeRef,
     transform,
     transition,
-  } = useSortable({ id });
+  } = useSortable({ id, data: { type: id, dndPosition: 'center'} });
 
   const style = {
     transform: CSS.Transform.toString(transform),
@@ -23,7 +23,6 @@ const SortableItem = ({ id }) => {
 
   return (
     <div ref={setNodeRef} style={style} {...attributes} {...listeners} className="sortable_item">
-      {/* ... */}
       {Controls[id] ? Controls[id] : <Input placeholder={id} />}
     </div>
   );
