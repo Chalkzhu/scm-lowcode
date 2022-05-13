@@ -13,9 +13,9 @@ const LeftLayout = () => {
           <div key={v.id} className="group">
             <div className="group_title">{v.title}</div>
             <div className="group_list">
-              {v.enum.map(child => (
-                <div key={child.type} className="group_item_wrap">
-                  <DragItem id={child.type} {...child} />
+              {v.enum?.map(child => (
+                <div key={child.widget} className="group_item_wrap">
+                  <DragItem id={child.widget} {...child} />
                 </div>
               ))}
             </div>

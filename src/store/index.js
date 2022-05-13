@@ -7,14 +7,14 @@ class GlobalStore {
   components = [
     {
       id: 'base', title: '基础组件', enum: [
-        { label: '输入框', type: 'input' },
-        { label: '计数器', type: 'number' },
+        { title: '输入框', widget: 'input' },
+        { title: '计数器', widget: 'number' },
       ]
     },
     {
       id: 'complex', title: '高级组件', enum: [
-        { label: '子表单', type: 'form' },
-        { label: '计算公式', type: 'formula' }
+        { title: '子表单', widget: 'form' },
+        { title: '计算公式', widget: 'formula' }
       ]
     }
   ];
@@ -48,14 +48,17 @@ class GlobalStore {
     children: [
       {
         name: 'url',
-        itle: 'url输入框',
-        placeholder: '//www.taobao.com',
+        widget: 'input',
+        title: 'url输入框',
+        default: 'www',
+        placeholder: 'www',
         type: 'string',
         format: 'url',
         required: true,
       },
       {
         name: 'email',
+        widget: 'input',
         title: 'email输入框',
         type: 'string',
         format: 'email',
@@ -63,7 +66,11 @@ class GlobalStore {
     ]
   };
 
-  activeData = {}; // 当前选中的拖拽元素id
+  activeData = {
+    id: 'url',
+    dndPosition: "center",
+    widget: "input",
+  }; // 当前选中的拖拽元素数据
 
   constructor() {
     makeAutoObservable(this)

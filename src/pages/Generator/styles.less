@@ -7,12 +7,12 @@
   .right_layout {
     flex: 0 0 auto;
     width: 256px;
-    padding: 16px;
-    overflow-y: auto;
   }
 
   .left_layout {
     background-color: var(--color-4);
+    padding: 16px;
+    overflow-y: auto;
 
     .group {
       .group_title {
@@ -53,7 +53,27 @@
   }
 
   .right_layout {
+    display: flex;
+    flex-flow: column;
     border-left: 1px solid var(--color-4);
+
+    .right_layout_header {
+      display: flex;
+      align-items: center;
+      flex: 0 0 auto;
+      font-size: 14px;
+      font-weight: 600;
+      height: 48px;
+      border-bottom: 1px solid var(--color-4);
+      padding: 0 16px;
+    }
+
+    .right_layout_body {
+      flex: 1;
+      height: 100%;
+      padding: 16px;
+      overflow-y: auto;
+    }
   }
 
   .mid_layout {
@@ -86,14 +106,10 @@
       padding: 16px;
       overflow-x: hidden;
       overflow-y: auto;
-
-      .sortable_item {
-        margin-bottom: 16px;
-      }
     }
   }
 
-  // 拖拽的样式
+  // 拖拽时的样式: 左侧拖拽
   .drag_overlay {
     display: inline-flex;
     align-items: center;
@@ -109,6 +125,18 @@
     cursor: pointer;
 
     &:hover {
+      border-color: var(--primary-color);
+    }
+  }
+
+  // 拖拽时的样式: 中间拖拽
+  .sortable_item {
+    border: 1px dashed var(--color-15);
+    padding: 8px;
+    margin-bottom: 16px;
+    transition: .3s;
+
+    &.active {
       border-color: var(--primary-color);
     }
   }

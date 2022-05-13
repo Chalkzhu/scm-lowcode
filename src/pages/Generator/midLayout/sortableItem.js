@@ -1,20 +1,16 @@
 import React from 'react';
 import { useSortable } from '@dnd-kit/sortable';
 import { CSS } from '@dnd-kit/utilities';
-import { Input } from 'antd';
+import Item from '../components/item';
 
-const Controls = {
-  input: <Input />,
-};
-
-const SortableItem = ({ id }) => {
+const SortableItem = (props) => {
   const {
     attributes,
     listeners,
     setNodeRef,
     transform,
     transition,
-  } = useSortable({ id, data: { type: id, dndPosition: 'center'} });
+  } = useSortable({ id: props.name, data: { ...props, dndPosition: 'center' } });
 
   const style = {
     transform: CSS.Transform.toString(transform),
@@ -22,9 +18,7 @@ const SortableItem = ({ id }) => {
   };
 
   return (
-    <div ref={setNodeRef} style={style} {...attributes} {...listeners} className="sortable_item">
-      {Controls[id] ? Controls[id] : <Input placeholder={id} />}
-    </div>
+    <Item ref={setNodeRef} style={style} {...attributes} {...listeners} itemProps={props} />
   );
 };
 

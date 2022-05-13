@@ -11,6 +11,7 @@ const defaultValue = {
   properties: {
     url: {
       title: 'url输入框',
+      widget: 'input',
       placeholder: '//www.taobao.com',
       type: 'string',
       format: 'url',
@@ -18,6 +19,7 @@ const defaultValue = {
     },
     email: {
       title: 'email输入框',
+      widget: 'input',
       type: 'string',
       format: 'email',
     },

@@ -104,6 +104,43 @@ $ npm run generate
 
 
 
+```js
+
+itemJson: {
+  name: 'url',
+  widget: 'input',
+  title: 'url输入框',
+  default: 'www',
+  placeholder: 'www',
+  type: 'string',
+  format: 'url',
+  required: true,
+}
+
+
+// midLayout
+// sortableBox
+SortableItem: {
+	key,
+	id,
+	...itemJson,
+}
+
+// SortableItem
+useSortable: {
+	id,
+	data: { dndPosition: 'center', ...itemJson }
+}
+
+// Item: {
+
+}
+
+
+```
+
+
+
 
 
 ### TableDesign
