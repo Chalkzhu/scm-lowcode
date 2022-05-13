@@ -23,7 +23,7 @@ const Item = forwardRef(({ children, itemProps, ...props }, ref) => {
 
   // 展示的内容结构, 拖拽时与渲染时
   const itemData = useMemo(() => {
-    const {sortable, ...resetItemProps} =  { ...globalStore.activeData, ...itemProps };
+    const {sortable, id, ...resetItemProps} =  { ...globalStore.activeData, ...itemProps };
     return resetItemProps;
   }, [globalStore.activeData, itemProps]);
 
